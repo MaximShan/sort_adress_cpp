@@ -13,6 +13,7 @@ private:
 	int flat;
 public:
 	data_adress() : city(""), street(""), house(0), flat(0) {};
+	data_adress(string c, string s, int h, int f) : city(c), street(s), house(h), flat(f) {};
 
 	void set_data(const string& c, const string& s, int& h, int& f) {
 		city = c;
@@ -52,7 +53,8 @@ int main() {
 		int house, flat;
 		file >> city >> street >> house >> flat;
 
-		adress[i].set_data(city, street, house, flat);
+		//adress[i].set_data(city, street, house, flat);
+		adress[i] = data_adress(city, street, house, flat);
 	};
 	bobble_sort(adress, size);
 	for (int i = 0; i < size; i++) {
